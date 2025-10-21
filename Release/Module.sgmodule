@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-10-18 18:19:53
+#!desc=2025-10-21 21:43:02
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube字幕翻译语言：默认中文，填off关闭；\n YouTube歌词翻译语言：默认中文，填off关闭；\n 
 
@@ -1074,6 +1074,7 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT
 ^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list&_ret_key=result&site_set - reject-200
 ^https?:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush - reject
 ^https?:\/\/douyucdn\.cn\/.+\/appapi\/getinfo - reject
+^https?:\/\/download1\.bankcomm\.com\/_cdn\/mobs\/home\/oss\/pub\/file\/file\/public\/config\/pageConfig - reject
 ^https?:\/\/download1\.bankcomm\.com\/chngweb\/CHNRCSP\/media - reject-200
 ^https?:\/\/download1\.bankcomm\.com\/mobs6-inner\/offline\/static\/releaseConf - reject
 ^https?:\/\/download\.trip\.com\/html5 - reject
