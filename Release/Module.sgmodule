@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-10-24 21:23:07
+#!desc=2025-10-27 17:18:56
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube字幕翻译语言：默认中文，填off关闭；\n YouTube歌词翻译语言：默认中文，填off关闭；\n 
 
@@ -2533,7 +2533,7 @@ cnftp =type=http-response, pattern=^https?:\/\/mobile\.api\.mgtv\.com\/v10\/vide
 cnftp =type=http-response, pattern=^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/cnftp.js, requires-body=true, max-size=0
 cnftp =type=http-response, pattern=^https?:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/cnftp.js, requires-body=true, max-size=0
 cnftp =type=http-response, pattern=^https?:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/cnftp.js, requires-body=true, max-size=0
-cotti =type=http-response, pattern=^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/cotti.js, requires-body=true, max-size=0, binary-body-mode=true
+cotti =type=http-request, pattern=^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/cotti.js, requires-body=true, max-size=0, binary-body-mode=true
 dianping =type=http-response, pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/dianping.js, requires-body=true, max-size=0
 dianping =type=http-response, pattern=^https?:\/\/img\.meituan\.net\/(dpmobile|goodsawardpic)\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/dianping.js, requires-body=true, max-size=0
 dushu365 =type=http-response, pattern=^https?:\/\/g(.*)\.dushu365\.com\/abtest-front\/banner-modular\/get, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/dushu365.js, requires-body=true, max-size=0
