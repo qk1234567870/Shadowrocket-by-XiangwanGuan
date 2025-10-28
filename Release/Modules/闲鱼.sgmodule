@@ -1,5 +1,5 @@
 #!name=闲鱼
-#!desc=2025-09-26 09:59:28
+#!desc=2025-10-28 19:40:51
 
 [Rule]
 AND, ((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")), REJECT
@@ -29,6 +29,7 @@ http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.w
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ '.data.cardList |= map(if has("cardData") and (.cardData | has("hotwords")) then .cardData |= del(.hotwords) else . end)'
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ '.data.resultList |= map(select(.type != "MarketHotSpot"))'
 http-response-jq ^https?:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ '.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType == "ad" then empty else . end)'
+http-response-jq ^https?:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ 'del(.data.resultPrefixBar)'
 
 [MITM]
 hostname = %APPEND% acs.m.goofish.com,g-acs.m.goofish.com

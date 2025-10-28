@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-10-28 16:30:05
+#!desc=2025-10-28 19:40:51
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -2277,6 +2277,7 @@ http-response-jq ^https?:\/\/dict\.youdao\.com\/homepage\/toolbar\/get\? 'delpat
 http-response-jq ^https?:\/\/dili.sqcosmos.com\/jiekou\/mains\/p\d+.html '.album |= map(select(.id != "4154" and .id != "4165"))'
 http-response-jq ^https?:\/\/entry\.qtfm\.cn\/api\/v\d\/personal\/\?carrier 'delpaths([["data", "membership"], ["data", "level_info"]]) | .data.discovery.entries |= map(select(.title != "借钱"))'
 http-response-jq ^https?:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ '.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType == "ad" then empty else . end)'
+http-response-jq ^https?:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ 'del(.data.resultPrefixBar)'
 http-response-jq ^https?:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/tab\/list_v\d 'def namesToRemove:["AI帮唱","长相思2","K歌","小说","游戏"];def removeParentIfNameMatches:if type=="object"then with_entries(select(.value|(type=="object"and .name as $name|$name|IN(namesToRemove[])|not)))|map_values(removeParentIfNameMatches)else. end;removeParentIfNameMatches'
 http-response-jq ^https?:\/\/ggs\.myzaker\.com\/zk_article_ad\.php\? 'delpaths([["data","article_bottom"]])'
 http-response-jq ^https?:\/\/ggs\.myzaker\.com\/zk_article_ad\.php\? 'delpaths([["data","recommend_ad"]])'
