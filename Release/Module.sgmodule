@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-10-31 08:01:37
+#!desc=2025-10-31 08:04:25
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -93,6 +93,7 @@ DOMAIN, csc-apm.sgcc.com.cn, REJECT
 DOMAIN, da.bridgeturbo.com, REJECT
 DOMAIN, ddfs-public.ddimg.mobi, REJECT
 DOMAIN, dflow.bz.mgtv.com, REJECT
+DOMAIN, dns.weixin.qq.com.cn, REJECT
 DOMAIN, dpmtpush.dianping.com, REJECT
 DOMAIN, dsp-ad.yy.com, REJECT
 DOMAIN, dwtracking.jk.cn, REJECT
