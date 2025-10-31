@@ -1,9 +1,8 @@
 #!name=微信
-#!desc=2025-10-31 08:04:26
+#!desc=2025-10-31 08:01:41
 
 [Rule]
 DOMAIN, badjs.weixinbridge.com, REJECT
-DOMAIN, dns.weixin.qq.com.cn, REJECT
 DOMAIN-SUFFIX, wxs.qq.com, REJECT
 
 [URL Rewrite]
