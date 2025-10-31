@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-10-31 08:01:37
+#!desc=2025-10-31 17:19:26
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -1373,6 +1373,7 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT
 ^https?:\/\/lop-proxy\.jd\.com\/BeaconFireApi\/queryMarketingRecommendRuleConfigInfo - reject-dict
 ^https?:\/\/lop-proxy\.jd\.com\/csat\/getNPSQuestionnaire - reject-dict
 ^https?:\/\/lop-proxy\.jd\.com\/home\/banner - reject-dict
+^https?:\/\/lop-proxy\.jd\.com\/index\/queryTabBubble - reject
 ^https?:\/\/lop-proxy\.jd\.com\/order\/getCarbonIntegral - reject-dict
 ^https?:\/\/lop-proxy\.jd\.com\/search\/getQuestionnaireByOrderInfo - reject-dict
 ^https?:\/\/luckman\.suning\.com\/luck-web\/policy\/v\d\/msf\/index\.do - reject-200
