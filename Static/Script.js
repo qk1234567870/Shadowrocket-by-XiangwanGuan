@@ -94,23 +94,25 @@
     );
     const matched = q ? entries.filter(([k]) => fuzzyMatch(k, q)) : entries;
 
+    const frag = document.createDocumentFragment();
     matched.forEach(([app, data]) => {
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML = `
-            <div class="header-row">
-              <h3>${app}</h3>
-              <span class="badge">解密域名：${data.domains.size}</span>
-            </div>
-            <div class="meta">
-              <button class="btn" data-copy>反解密模块</button>
-              <button class="btn" data-raw>查看原始模块</button>
-              <button class="btn" data-install>安装此模块</button>
-            </div>
-            <pre class="code">${[...data.domains].join("\n")}</pre>
-          `;
-      root.appendChild(card);
+          <div class="header-row">
+            <h3>${app}</h3>
+            <span class="badge">解密域名：${data.domains.size}</span>
+          </div>
+          <div class="meta">
+            <button class="btn" data-copy>反解密模块</button>
+            <button class="btn" data-raw>查看原始模块</button>
+            <button class="btn" data-install>安装此模块</button>
+          </div>
+          <pre class="code">${[...data.domains].join("\n")}</pre>
+        `;
+      frag.appendChild(card);
     });
+    root.appendChild(frag);
   };
 
   const attachEvents = () => {
@@ -140,13 +142,13 @@
       if (e.target.matches("[data-raw]")) {
         $("#modalBody").textContent = data.raw;
         modal.style.display = "flex";
-        setTimeout(() => modal.classList.add("show"), 10);
+        requestAnimationFrame(() => modal.classList.add("show"));
       }
 
       if (e.target.matches("[data-install]")) {
         state.pendingInstall = data.fileName;
         confirmModal.style.display = "flex";
-        setTimeout(() => confirmModal.classList.add("show"), 10);
+        requestAnimationFrame(() => confirmModal.classList.add("show"));
       }
     });
 
