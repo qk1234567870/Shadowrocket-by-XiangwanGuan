@@ -29,7 +29,7 @@ jobs:
 
       - name: Define file paths and links
         run: |
-          echo "Rewrite/MiscConfig/Bilibili.conf|https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/loon/plugin/bilibili.plugin" > download_file_links.list
+          echo "Rewrite/MiscConfig/Bilibili.conf|https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/loon/plugin/bilibili.lpx" > download_file_links.list
           echo "Rewrite/MiscConfig/Spotify.conf|https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Module/AD/Spotify.sgmodule" >> download_file_links.list
           echo "Rewrite/MiscConfig/YouTube.conf|https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule" >> download_file_links.list
           echo "Rewrite/NaisiConfig/Filter.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/filter.list" >> download_file_links.list
