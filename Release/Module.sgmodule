@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-01 10:34:29
+#!desc=2025-11-06 15:20:04
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -1810,6 +1810,7 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT
 ^https?:\/\/truthsocial\.com\/api\/v\d\/truth\/ads - reject
 ^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo - reject-dict
 ^https?:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/info-flow\/reconsitution-list - reject
+^https?:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/module-config\/query - reject-dict
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo - reject-dict
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList - reject-dict
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity - reject-dict
