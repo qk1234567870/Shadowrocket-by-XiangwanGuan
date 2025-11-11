@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 20:51:54
+#!desc=2025-11-11 20:55:29
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -948,7 +948,9 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/apphw\.ddpai\.com:\d+\/onroad\/api\/v\d\/\w+\/list - reject-dict
 ^https?:\/\/appi\.kuwo\.cn\/kuwopay\/personal\/cells - reject-dict
 ^https?:\/\/appmedia\.springairlines\.com\/cmsstatic\/.*\.gif - reject-img
-^https?:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) - reject
+^https?:\/\/apps\.api\.ke\.com\/config\/config\/bootpage\? - reject-dict
+^https?:\/\/apps\.api\.ke\.com\/config\/config\/getactivityconfig\? - reject-dict
+^https?:\/\/apps\.api\.ke\.com\/platform\/shellapp\/userCenter\/feed\? - reject-dict
 ^https?:\/\/appuser-static\.huolala\.cn\/imgs - reject-dict
 ^https?:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad - reject-200
 ^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble\? - reject-dict
@@ -2319,6 +2321,12 @@ http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/f
 http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ 'delpaths([["data","activityTabInfoList"]])'
 http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ 'delpaths([["data","functionOperatorInfoList"]])'
 http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ 'delpaths([["data","memberOperator"]])'
+http-response-jq ^https?:\/\/apps\.api\.ke\.com\/platform\/shellapp\/homepage\/feed\? '.data.list |= map(select(.cardType == "houseContainer" or .cardType == "houseV2" or .cardType == "houseV3" or .cardType == "rentHouseDiscount" or .cardType == "decorationCase"))'
+http-response-jq ^https?:\/\/apps\.api\.ke\.com\/platform\/shellapp\/homepage\/initData\/mini\? 'delpaths([["data","bootpage"]])'
+http-response-jq ^https?:\/\/apps\.api\.ke\.com\/platform\/shellapp\/homepage\/initData\/mini\? 'delpaths([["data","bottom_bar_activity"]])'
+http-response-jq ^https?:\/\/apps\.api\.ke\.com\/platform\/shellapp\/myhome\/pagedetail\? '.data.moduleList |= map(select(.tab != "myHomeDecorV4"))'
+http-response-jq ^https?:\/\/apps\.api\.ke\.com\/platform\/shellapp\/userCenter\/info\? 'del(.data.mainIcons.list[] | select(.indexKey == "coupon"))'
+http-response-jq ^https?:\/\/apps\.api\.ke\.com\/platform\/shellapp\/userCenter\/info\? 'delpaths([["data","islandModule"]])'
 http-response-jq ^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? '.data |= map(if .name|IN("daijia_journey_new_tcp_switch","daijia_tcp_init","daijia_tcp_msg_encrypt","daijia_tcp_site_info","daijia_tcp_site_report")then.allow=false else. end)'
 http-response-jq ^https?:\/\/ask\.zhaopin\.com\/plat-zqa-server\/home\/\d\.\d\.\d\/getHomeContents\? 'delpaths([["data","templates",0,"data","banner"]])'
 http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/comments\/v3\/topInfo\? 'delpaths([["data","bannerVos"]])'
