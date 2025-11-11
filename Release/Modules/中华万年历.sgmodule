@@ -1,11 +1,12 @@
 #!name=中华万年历
-#!desc=2025-11-11 14:48:58
+#!desc=2025-11-11 19:30:40
 
 [Rule]
 DOMAIN, sdk.ad.sfys365.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/album\/hl_card\? - reject-dict
+^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/auth\/voice_room_entrance\/list\? - reject-dict
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/overview\? - reject-dict
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/question_spots\/panel\? - reject-dict
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/jujia\/flow\? - reject-dict

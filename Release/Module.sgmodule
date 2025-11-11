@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 19:26:45
+#!desc=2025-11-11 19:30:40
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -997,6 +997,7 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP - reject-dict
 ^https?:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION - reject-dict
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/album\/hl_card\? - reject-dict
+^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/auth\/voice_room_entrance\/list\? - reject-dict
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/overview\? - reject-dict
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/question_spots\/panel\? - reject-dict
 ^https?:\/\/client-lz\.rili\.cn\/lizhi\/api\/jujia\/flow\? - reject-dict
