@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 19:47:50
+#!desc=2025-11-11 19:51:36
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -382,6 +382,10 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/gethotactcards - reject-dict
 ^https?:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getoillist - reject-dict
 ^https?:\/\/(a\.athm\.cn\/)?mobile\.app\.autohome\.com\.cn\/platform\/carserver\/usercenter\/getwashcarlist - reject-dict
+^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/ad\/ - reject-dict
+^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/live\/feed\/info\/simplelive\/card\? - reject-dict
+^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/nearby\/widget\/info\? - reject-dict
+^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/taskCenter\/task\/report\? - reject-dict
 ^https?:\/\/(api|api-bk\d+)\.tv\.sohu\.com\/agg\/api\/app\/config\/bootstrap - reject
 ^https?:\/\/(api|atrace)\.chelaile\.net\.cn\/adpub\/ - reject
 ^https?:\/\/(api|b)\.zhuishushenqi\.com\/advert - reject-200
@@ -906,9 +910,6 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/autoapi\.autohome\.com\.cn\/ypttd\/yjc\/web\/mkgt\/act\/seckillInfo - reject-dict
 ^https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin) - reject-dict
 ^https?:\/\/awp-assets\.meituan\.net\/hfe\/fep\/\w+\.json - reject
-^https?:\/\/az\d-api\.ksapisrv\.com\/rest\/n\/ad\/ - reject-dict
-^https?:\/\/az\d-api\.ksapisrv\.com\/rest\/n\/nearby\/widget\/info\? - reject-dict
-^https?:\/\/az\d-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\? - reject-dict
 ^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/ - reject
 ^https?:\/\/b\.appsimg\.com\/upload\/momin - reject
 ^https?:\/\/baichuan\.baidu\.com\/rs\/adpmobile\/launch - reject
@@ -2021,10 +2022,14 @@ http-response ^https?:\/\/www\.flyert(rip)?\.com(\.cn)?\/.*\.php\?.*module=threa
 http-response ^https?:\/\/www\.tailgdd\.com\/v\d\/smart\/app\/config\/get$ footResource footResource0
 http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\? "TAG_AD_INFO" "SUCCEED"
 http-response-jq ^https?:\/\/(?:api-\w+|gateway-mobile-gray|post)\.soulapp\.cn\/(?:furion\/position\/content|hot\/soul\/rank|mobile\/app\/version\/queryIos|official\/scene\/module|teenager\/config|v2\/post\/gift\/list|v\d\/post\/homepage\/guide\/card) 'delpaths([["data"]])'
+http-response-jq ^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/im\/wd\/top\/navigation\/getRecommendedSession\? 'delpaths([["data","operationRecommendationList"]])'
+http-response-jq ^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/feed\/(selection|selectionFast)\? 'if (.feeds | type) == "array" then .feeds |= map(select(.ad | not)) else . end'
+http-response-jq ^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/user\/profile\/v2\? 'delpaths([["postRecommends"]])'
 http-response-jq ^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? '.sidebarExSquareStyle.commonlyUsedList |= map(select(.title == "设置" or .title == "历史记录" or .title == "草稿箱" or .title == "我的钱包" or .title == "小程序" or .title == "未成年人模式" or .title == "官方客服" or .title == "内容偏好" or .title == "离线模式" or .title == "稍后再看" or .title == "举报中心" or .title == "挂件"))'
 http-response-jq ^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["reskinConfig"]])'
 http-response-jq ^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["sidebarExSquareStyle","moreList"]])'
 http-response-jq ^https?:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["sidebarExSquareStyle","topList"]])'
+http-response-jq ^https?:\/\/(apissl|az\d-live|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/live\/feed\/square\/refresh\? 'delpaths([["data","banners"]])'
 http-response-jq ^https?:\/\/(app-v1\.ecoliving168\.com|852b95d36\.xwlpk\.cn)\/api\/v1\/movie\/index_recommend\? '.data[].list |= map(select(.type != 3)) | .data |= map(select(.layout != "advert_self"))'
 http-response-jq ^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\? 'delpaths([["adSlots"]])'
 http-response-jq ^https?:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v1\/system\/configs\? 'delpaths([["data","incentiveCfgList"]])'
@@ -2235,10 +2240,6 @@ http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\
 http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ 'delpaths([["data","functionOperatorInfoList"]])'
 http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ 'delpaths([["data","memberOperator"]])'
 http-response-jq ^https?:\/\/ask\.zhaopin\.com\/plat-zqa-server\/home\/\d\.\d\.\d\/getHomeContents\? 'delpaths([["data","templates",0,"data","banner"]])'
-http-response-jq ^https?:\/\/az\d-api(-idc)?\.ksapisrv\.com\/rest\/n\/feed\/selectionFast\? 'if (.feeds | type) == "array" then .feeds |= map(select(.ad | not)) else . end'
-http-response-jq ^https?:\/\/az\d-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2\? 'delpaths([["postRecommends"]])'
-http-response-jq ^https?:\/\/az\d-api\.ksapisrv\.com\/rest\/im\/wd\/top\/navigation\/getRecommendedSession\? 'delpaths([["data", "operationRecommendationList"]])'
-http-response-jq ^https?:\/\/az\d-live\.ksapisrv\.com\/rest\/n\/live\/feed\/square\/refresh\? 'delpaths([["data","banners"]])'
 http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene '.data.showShopEntry=false|.data.idolTabShow=true'
 http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/music\/recommendList '.data.musicList[] |= del(.showAd)'
 http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/resource\/recommend '.data.resourceList[] |= del(.resource)'
