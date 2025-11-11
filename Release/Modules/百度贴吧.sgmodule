@@ -1,8 +1,8 @@
 #!name=百度贴吧
-#!desc=2025-11-11 14:54:53
+#!desc=2025-11-11 20:01:38
 
 [Rule]
-IP-CIDR, 180.76.76.200/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 180.76.76.200/32, REJECT, no-resolve, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/tiebac\.baidu\.com\/c\/f\/forum\/forumGuide - reject-dict

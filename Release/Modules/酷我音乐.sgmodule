@@ -1,8 +1,8 @@
 #!name=酷我音乐
-#!desc=2025-11-11 15:05:04
+#!desc=2025-11-11 20:01:38
 
 [Rule]
-IP-CIDR, 111.206.98.63/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 111.206.98.63/32, REJECT, no-resolve, pre-matching
 URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/AdService\/", REJECT-TINYGIF, extended-matching
 URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/EcomResourceServer\/", REJECT-TINYGIF, extended-matching
 URL-REGEX, "^https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s", REJECT-TINYGIF, extended-matching

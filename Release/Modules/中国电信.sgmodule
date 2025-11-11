@@ -1,13 +1,13 @@
 #!name=中国电信
-#!desc=2025-11-11 14:54:53
+#!desc=2025-11-11 20:01:39
 
 [Rule]
 DOMAIN, ad.21cn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ad.k.21cn.com, REJECT, extended-matching, pre-matching
 DOMAIN, admarket.21cn.com, REJECT, extended-matching, pre-matching
 DOMAIN, adshows.21cn.com, REJECT, extended-matching, pre-matching
-IP-CIDR, 122.229.8.47/32,REJECT, no-resolve, pre-matching
-IP-CIDR, 122.229.29.89/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 122.229.8.47/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 122.229.29.89/32, REJECT, no-resolve, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/cloud\.189\.cn\/include\/splash\/ - reject

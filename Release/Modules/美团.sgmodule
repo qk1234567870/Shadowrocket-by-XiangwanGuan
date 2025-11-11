@@ -1,5 +1,5 @@
 #!name=美团
-#!desc=2025-11-11 14:54:53
+#!desc=2025-11-11 20:01:38
 
 [Rule]
 DOMAIN, hlx.meituan.com, REJECT, extended-matching, pre-matching
@@ -16,7 +16,7 @@ DOMAIN-SUFFIX, meituangov.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, wmlog.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, dnspod.meituan.httpdns, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, report.meituan, REJECT, extended-matching, pre-matching
-IP-CIDR, 103.37.155.60/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 103.37.155.60/32, REJECT, no-resolve, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(gif|jpg|mp4) - reject-img
