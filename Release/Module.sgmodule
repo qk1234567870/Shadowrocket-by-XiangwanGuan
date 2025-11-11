@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 20:19:33
+#!desc=2025-11-11 20:23:56
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -963,14 +963,17 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/ - reject
 ^https?:\/\/b\.appsimg\.com\/upload\/momin - reject
 ^https?:\/\/baichuan\.baidu\.com\/rs\/adpmobile\/launch - reject
-^https?:\/\/bd-api\.kuwo\.cn\/api\/(\w+\/)?advert - reject-dict
-^https?:\/\/bd-api\.kuwo\.cn\/api\/.*popup - reject-dict
-^https?:\/\/bd-api\.kuwo\.cn\/api\/pay\/vip\/lowPriceText - reject-dict
-^https?:\/\/bd-api\.kuwo\.cn\/api\/play\/listening\/entrance\/music\?musicId - reject-dict
-^https?:\/\/bd-api\.kuwo\.cn\/api\/search\/topic\/word\/list - reject-dict
-^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/banner - reject-dict
-^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/finds\/module - reject-dict
-^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/vipEnter - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/(play|service|advert)\/advert\/ - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/pay\/h5\/common\/popup\? - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/pay\/vip\/invitation\/assist\/popup\? - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/pay\/vip\/invitation\/swell\/popup\? - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/pay\/vip\/lowPriceText\? - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/popup\/ - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/banner\/ - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/vipEnter\? - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/home\/module\?.*&moduleId=6 - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/version\/popup\? - reject-dict
+^https?:\/\/bd-api\.kuwo\.cn\/api\/ucenter\/vip\/give\/config\? - reject-dict
 ^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm - reject-dict
 ^https?:\/\/bgw\.xinyue\.qq\.com\/xyapi\.PageService\/GetIndexPopFlash - reject-200
 ^https?:\/\/bid\.adview\.cn\/agent\/getAd - reject
@@ -2105,6 +2108,14 @@ http-response-jq ^https?:\/\/(www|api)\.duitang\.com\/napi\/settings\/ 'delpaths
 http-response-jq ^https?:\/\/(www|api)\.duitang\.com\/napi\/settings\/ 'delpaths([["data","SHARE_BANNER"]])'
 http-response-jq ^https?:\/\/(www|api)\.duitang\.com\/napi\/settings\/ 'delpaths([["data","SPLASH_SWING_OPEN"]])'
 http-response-jq ^https?:\/\/.+\.gamersky.com/.+/lists/getListElements '.listElements |= map(select(has("adCategory") | not))'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","CommentADPosition"]])'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","DiscoverADPosition"]])'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","DownloadAd"]])'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","FreeModVoiceReminder"]])'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","GamesTrans"]])'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","MvTryShowAds"]])'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","bodianmvdialog"]])'
+http-response-jq ^https?:\/\/ab-bodian\.kuwo\.cn\/abtest\/ui\/info\? 'delpaths([["data","mapTestInfo","insert"]])'
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ '.data.container.sections |= map(if .index == "5" then .item.tool.exContent.tools = [[{"targetUrl":"https://h5.m.goofish.com/wow/moyu/moyu-project/act-react/pages/e4mbwSjGRWxw","exContent":{"title":"简历认证","icon":"https://img.alicdn.com/imgextra/i4/O1CN01eiWw4r1GJlOaTIEfx_!!6000000000602-2-tps-84-84.png","toolId":26},"clickParam":{"args":{"toolId":"26"},"arg1":"Function"}},{"targetUrl":"https://h5.m.goofish.com/wow/moyu/moyu-project/moyu-tb-resell/pages/newResell?isNeedRefresh=0&setTab=1","exContent":{"title":"淘宝转卖","icon":"https://gw.alicdn.com/imgextra/i2/O1CN01JTbPcx1Qrn3n9w03n_!!6000000002030-2-tps-84-84.png","toolId":11},"clickParam":{"args":{"toolId":"11"},"arg1":"Function"}},{"targetUrl":"https://h5.m.goofish.com/wow/moyu/moyu-project/planting-notes/pages/publishCenter","exContent":{"title":"宝贝上首页","icon":"https://gw.alicdn.com/imgextra/i3/O1CN01BOqDXJ1RA6uBkvYQW_!!6000000002070-2-tps-84-84.png","toolId":34},"clickParam":{"args":{"toolId":"34"},"arg1":"Function"}},{"targetUrl":"https://h5.m.goofish.com/cea/idleFish-F2e/creator-pha/mypost?loadingVisible=false","exContent":{"title":"我的帖子","icon":"https://gw.alicdn.com/imgextra/i1/O1CN01Cge0QO1R2K5RfoaOw_!!6000000002053-2-tps-84-84.png","toolId":13},"clickParam":{"args":{"toolId":"13"},"arg1":"Function"}}],[{"targetUrl":"https://h5.m.goofish.com/app/msd/buyer-aqcenter/index.html?source=316#/notice","exContent":{"title":"闲鱼公约","icon":"https://img.alicdn.com/imgextra/i4/O1CN01A9ofQ51t1EOZfykDn_!!6000000005841-2-tps-84-84.png","toolId":20},"clickParam":{"args":{"toolId":"20"},"arg1":"Function"}},{"targetUrl":"https://h5.m.goofish.com/wow/moyu/moyu-project/experience-officer/pages/home?kun=true","exContent":{"title":"闲鱼体验官","icon":"https://gw.alicdn.com/imgextra/i1/O1CN016leRFv1N0Fprgaghl_!!6000000001507-2-tps-84-84.png","toolId":2},"clickParam":{"args":{"toolId":"2"},"arg1":"Function"}},{"targetUrl":"https://h5.m.goofish.com/wow/moyu/moyu-project/cro-security-center/pages/security-center","exContent":{"title":"安全中心","icon":"https://gw.alicdn.com/imgextra/i4/O1CN013kllih1NlQd6e3sRv_!!6000000001610-2-tps-84-84.png","toolId":1},"clickParam":{"args":{"toolId":"1"},"arg1":"Function"}}]] else . end)'
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ '.data.container.sections |= map(select(.template.name as $name | ["my_fy25_header","my_fy25_user_info","my_fy25_trade","my_fy25_appraise","my_fy25_tools"] | index($name)))'
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.fun\.follow\.feed\.list\/ '.data.sections|=map(select(.cardType==2001))'
@@ -2298,10 +2309,27 @@ http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\
 http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ 'delpaths([["data","functionOperatorInfoList"]])'
 http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ 'delpaths([["data","memberOperator"]])'
 http-response-jq ^https?:\/\/ask\.zhaopin\.com\/plat-zqa-server\/home\/\d\.\d\.\d\/getHomeContents\? 'delpaths([["data","templates",0,"data","banner"]])'
-http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene '.data.showShopEntry=false|.data.idolTabShow=true'
-http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/music\/recommendList '.data.musicList[] |= del(.showAd)'
-http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/resource\/recommend '.data.resourceList[] |= del(.resource)'
-http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/voice\/room\/v\d\/sidebar '(.data) = {}'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/comments\/v3\/topInfo\? 'delpaths([["data","bannerVos"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/comments\/v3\/topInfo\? 'delpaths([["data","putao"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/search\/topic\/word\/list\? 'delpaths([["data","globalJumpInfo"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/search\/topic\/word\/list\? 'delpaths([["data","hotTopic"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/search\/topic\/word\/list\? 'delpaths([["data","hotWord"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/search\/topic\/word\/list\? 'delpaths([["data","searchFind"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'delpaths([["data","conf","adDownListOpen"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'delpaths([["data","conf","adGuidePopCount"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'delpaths([["data","groupSign","adExitChange"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'delpaths([["data","groupSign","adGuideTest"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'delpaths([["data","groupSign","adStartAppDialog"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'delpaths([["data","groupSign","playTips"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'if (getpath(["data","conf","flowControlConfig"]) | has("p2pEnable")) then (setpath(["data","conf","flowControlConfig","p2pEnable"]; false)) else . end'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/conf\/all\? 'if (getpath(["data","conf","flowControlConfig"]) | has("uploadEnable")) then (setpath(["data","conf","flowControlConfig","uploadEnable"]; false)) else . end'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene\? 'delpaths([["data","adsNotFinishVipPop4DayInterval"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene\? 'delpaths([["data","iosP2PCacheEnable"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene\? 'delpaths([["data","warmStartDialog"]])'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene\? 'if (getpath(["data"]) | has("iosP2pEnableSendDataLimit")) then (setpath(["data","iosP2pEnableSendDataLimit"]; 1)) else . end'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/global\/config\/scene\? 'if (getpath(["data"]) | has("showShopEntry")) then (setpath(["data","showShopEntry"]; false)) else . end'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/home\/index\? '.data.moduleList |= map(select(.type | tostring | (. != "8" and . != "1")))'
+http-response-jq ^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/music\/recommendList\? '.data.musicList[] |= del(.showAd)'
 http-response-jq ^https?:\/\/bp-api\.bestv\.cn\/cms\/api\/c\/search\/hot\/v(2|4) '.dt.hot = [] | .dt.recommand = [] | .dt.bannerList = []'
 http-response-jq ^https?:\/\/bp-api\.bestv\.cn\/cms\/api\/free\/open\/advertisingV2 '.dt = []'
 http-response-jq ^https?:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/category_home\? 'del(.base.statistics | select(.ad_str)) | del(.cards[] | select(.alias_name == "entrence_focus" or .alias_name == "ad_trueview"))'
