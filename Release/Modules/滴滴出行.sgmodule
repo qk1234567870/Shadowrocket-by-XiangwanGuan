@@ -1,5 +1,5 @@
 #!name=滴滴出行
-#!desc=2025-11-11 14:50:35
+#!desc=2025-11-11 20:33:18
 
 [Rule]
 DOMAIN, gwp.xiaojukeji.com, REJECT, extended-matching, pre-matching
@@ -15,6 +15,7 @@ AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,63646,no-resolve)), REJECT
 
 [Body Rewrite]
 http-response-jq ^https?:\/\/api\.udache\.com\/gulfstream\/porsche\/v1\/dache_homepage_layout\? 'delpaths([["data","instances","car_icon_01","data","icon_info_new_agreement"]])'
+http-response-jq ^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? '.data |= map(if .name|IN("daijia_journey_new_tcp_switch","daijia_tcp_init","daijia_tcp_msg_encrypt","daijia_tcp_site_info","daijia_tcp_site_report")then.allow=false else. end)'
 http-response-jq ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout$ '.data.instances.center_wallet_finance_card.data.view_info |= map(select(.title == "优惠卡券" or .title == "余额" or .title == "福利金"))'
 http-response-jq ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout$ 'delpaths([["data","instances","center_marketing_card"]])'
 http-response-jq ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout$ 'delpaths([["data","instances","center_widget_list"]])'
@@ -29,4 +30,4 @@ http-response-jq ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/fast\
 http-response-jq ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\? 'delpaths([["data","mult_home_banner"]])'
 
 [MITM]
-hostname = %APPEND% api.udache.com,common.diditaxi.com.cn,conf.diditaxi.com.cn,ct.xiaojukeji.com,lion.didialift.com,res.xiaojukeji.com
+hostname = %APPEND% api.udache.com,as.xiaojukeji.com,common.diditaxi.com.cn,conf.diditaxi.com.cn,ct.xiaojukeji.com,lion.didialift.com,res.xiaojukeji.com
