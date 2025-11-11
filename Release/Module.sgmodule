@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 21:00:17
+#!desc=2025-11-11 21:09:40
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -824,7 +824,7 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json - reject-dict
 ^https?:\/\/api\.xiangji\.qq\.com\/splash$ - reject-dict
 ^https?:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info - reject-dict
-^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai-summary - reject-200
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai - reject-dict
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category - reject-dict
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash - reject-dict
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get - reject-dict
@@ -2270,7 +2270,7 @@ http-response-jq ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/slideshow\? '.data 
 http-response-jq ^https?:\/\/api\.xiachufang\.com\/v2\/config\/get\.json$ 'del(.content.tab_name[] | select(. == "减脂" or . == "商店" or . == "分类"))'
 http-response-jq ^https?:\/\/api\.xiachufang\.com\/v2\/homepage\/paged_waterfall_recommendations\.json$ 'del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type? == "ad"))'
 http-response-jq ^https?:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news '.result.links |= map(if .content_type == 27 then del(.title, .ad_pm, .img_gif, .idea_id, .ad_report, .label, .source, .intranet_only, .ad_cm, .content_type, .PROTOCOL, .img, .ad_ratio) else . end)'
-http-response-jq ^https?:\/\/api\.xiaoyuzhoufm\.com\/v1\/discovery-feed\/list '.data |= map(select(.type == "DISCOVERY_EPISODE_RECOMMEND" or .type == "EDITOR_PICK"))'
+http-response-jq ^https?:\/\/api\.xiaoyuzhoufm\.com\/v1\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_HEADER" and .type != "DISCOVERY_BANNER"))'
 http-response-jq ^https?:\/\/apiv2\.douyucdn\.cn\/japi\/entrance\/roomRes\/nc\/m\/list 'delpaths([["data","entrance_d"]])'
 http-response-jq ^https?:\/\/apiv2\.douyucdn\.cn\/japi\/entrance\/roomRes\/nc\/m\/list 'delpaths([["data","pendant_a"]])'
 http-response-jq ^https?:\/\/app-api\.smzdm\.com\/util\/update$ 'def r: if type=="object" then if has("ad_campaign_name") and (.ad_campaign_name|type=="string") and (.ad_campaign_name|test("\\S")) then empty else . end elif type=="array" then map(r) else . end; .data.operation_float |= map(map(r))'
