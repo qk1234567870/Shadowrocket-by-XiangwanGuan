@@ -1,16 +1,16 @@
 #!name=优酷
-#!desc=2025-09-15 18:33:00
+#!desc=2025-11-11 15:25:52
 
 [Rule]
-DOMAIN, push.m.youku.com, DIRECT
-DOMAIN, un-acs.youku.com, DIRECT
-DOMAIN, amdc.m.youku.com, REJECT
-DOMAIN, cad.youku.com, REJECT
-DOMAIN, mc.atm.youku.com, REJECT
-DOMAIN, pre-acs.youku.com, REJECT
-DOMAIN, yk-ssp.ad.youku.com, REJECT
-DOMAIN, ykad-data.youku.com, REJECT
-DOMAIN, youku-acs.m.taobao.com, REJECT
+DOMAIN, push.m.youku.com, DIRECT, extended-matching
+DOMAIN, un-acs.youku.com, DIRECT, extended-matching
+DOMAIN, amdc.m.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, cad.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, mc.atm.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, pre-acs.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, yk-ssp.ad.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, ykad-data.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, youku-acs.m.taobao.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) - reject-dict

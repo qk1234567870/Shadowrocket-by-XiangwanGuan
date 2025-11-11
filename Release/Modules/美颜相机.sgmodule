@@ -1,8 +1,8 @@
 #!name=美颜相机
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:14
 
 [Rule]
-DOMAIN, adui.tg.meitu.com, REJECT
+DOMAIN, adui.tg.meitu.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.meiyan\.com\/operation\/home_banner\.json\? - reject-dict

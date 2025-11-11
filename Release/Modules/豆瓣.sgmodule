@@ -1,9 +1,9 @@
 #!name=豆瓣
-#!desc=2025-09-12 09:06:47
+#!desc=2025-11-11 14:47:12
 
 [Rule]
-DOMAIN-SUFFIX, ad.doubanio.com, REJECT
-DOMAIN-SUFFIX, erebor.douban.com, REJECT
+DOMAIN-SUFFIX, ad.doubanio.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, erebor.douban.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* - reject-dict

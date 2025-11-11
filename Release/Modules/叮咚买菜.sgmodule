@@ -1,10 +1,10 @@
 #!name=叮咚买菜
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:12
 
 [Rule]
-DOMAIN, ddfs-public.ddimg.mobi, REJECT
-DOMAIN, rttrack.ddxq.mobi, REJECT
-DOMAIN, trackercollect.ddxq.mobi, REJECT
+DOMAIN, ddfs-public.ddimg.mobi, REJECT, extended-matching, pre-matching
+DOMAIN, rttrack.ddxq.mobi, REJECT, extended-matching, pre-matching
+DOMAIN, trackercollect.ddxq.mobi, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/imaicai\.api\.ddxq\.mobi\/guide-service\/userLike\/flowData$ - reject-dict

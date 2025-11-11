@@ -1,10 +1,10 @@
 #!name=蜻蜓FM
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:15
 
 [Rule]
-DOMAIN, ad-cdn.qingting.fm, REJECT
-DOMAIN, ad.qingting.fm, REJECT
-DOMAIN, adlaunch.qingting.fm, REJECT
+DOMAIN, ad-cdn.qingting.fm, REJECT, extended-matching, pre-matching
+DOMAIN, ad.qingting.fm, REJECT, extended-matching, pre-matching
+DOMAIN, adlaunch.qingting.fm, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/app\.qtfm\.cn\/m-bff\/v\d\/i_listen\/guess_you_like\? - reject-dict

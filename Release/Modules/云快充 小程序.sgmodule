@@ -1,8 +1,8 @@
 #!name=云快充 小程序
-#!desc=2025-09-09 10:10:27
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, et.ykccn.com, REJECT
+DOMAIN, et.ykccn.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/queryAdvertisingByParams - reject-dict

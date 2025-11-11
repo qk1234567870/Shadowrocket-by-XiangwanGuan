@@ -1,12 +1,12 @@
 #!name=虎牙直播
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN, huyafile.msstatic.com, REJECT
-DOMAIN, livewebbs2.msstatic.com, REJECT
-DOMAIN, livewebbs2pcdn.msstatic.com, REJECT
-DOMAIN, pp-cdnfile2pcdn.msstatic.com, REJECT
-DOMAIN-SUFFIX, v1d.szbdyd.com, REJECT
+DOMAIN, huyafile.msstatic.com, REJECT, extended-matching, pre-matching
+DOMAIN, livewebbs2.msstatic.com, REJECT, extended-matching, pre-matching
+DOMAIN, livewebbs2pcdn.msstatic.com, REJECT, extended-matching, pre-matching
+DOMAIN, pp-cdnfile2pcdn.msstatic.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, v1d.szbdyd.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$ - reject

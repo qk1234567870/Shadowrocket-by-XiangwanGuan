@@ -1,9 +1,9 @@
 #!name=微信
-#!desc=2025-10-31 08:01:41
+#!desc=2025-11-11 14:48:57
 
 [Rule]
-DOMAIN, badjs.weixinbridge.com, REJECT
-DOMAIN-SUFFIX, wxs.qq.com, REJECT
+DOMAIN, badjs.weixinbridge.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, wxs.qq.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/(ad_|advertisement|getappmsgad|cps_product_info|masonryfeed|relatedarticle|relatedsearchword|searchkeywordreport|geticon|getainfo|jsmonitor) - reject-dict

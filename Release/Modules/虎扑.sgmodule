@@ -1,9 +1,9 @@
 #!name=虎扑
-#!desc=2025-09-12 09:06:48
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN-SUFFIX, adx-api.hupu.com, REJECT
-DOMAIN-SUFFIX, adx.hupu.com, REJECT
+DOMAIN-SUFFIX, adx-api.hupu.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, adx.hupu.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/business\.msstatic\.com\/advertiser - reject-200

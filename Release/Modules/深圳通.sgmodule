@@ -1,8 +1,8 @@
 #!name=深圳通
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:15
 
 [Rule]
-DOMAIN-SUFFIX, wxsnsdythumb.wxs.qq.com, REJECT
+DOMAIN-SUFFIX, wxsnsdythumb.wxs.qq.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/ecard\.shenzhentong\.com\/wxweb\/bwxppub2\/QryAdvertList\.do - reject-200

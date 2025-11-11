@@ -1,10 +1,10 @@
 #!name=七猫小说
-#!desc=2025-09-23 00:01:34
+#!desc=2025-11-11 14:47:15
 
 [Rule]
-DOMAIN, cdn-ad.wtzw.com, REJECT
-DOMAIN, cdn-new-ad.wtzw.com, REJECT
-DOMAIN-SUFFIX, gdt.qq.com, REJECT
+DOMAIN, cdn-ad.wtzw.com, REJECT, extended-matching, pre-matching
+DOMAIN, cdn-new-ad.wtzw.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, gdt.qq.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api-bc\.wtzw\.com\/api\/v4\/search\/dispose - reject-dict

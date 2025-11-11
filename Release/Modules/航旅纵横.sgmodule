@@ -1,9 +1,9 @@
 #!name=航旅纵横
-#!desc=2025-09-15 18:16:55
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN, analytics.umetrip.com, REJECT
-DOMAIN, sensors.umetrip.com.cn, REJECT
+DOMAIN, analytics.umetrip.com, REJECT, extended-matching, pre-matching
+DOMAIN, sensors.umetrip.com.cn, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject

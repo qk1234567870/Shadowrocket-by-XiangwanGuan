@@ -1,8 +1,8 @@
 #!name=什么值得买
-#!desc=2025-10-10 10:46:01
+#!desc=2025-11-11 14:47:15
 
 [Rule]
-DOMAIN, adx-api.zdmimg.com, REJECT
+DOMAIN, adx-api.zdmimg.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/app-api\.smzdm\.com\/mychannel\/list$ - reject-dict

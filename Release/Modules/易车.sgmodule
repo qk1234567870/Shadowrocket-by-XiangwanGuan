@@ -1,9 +1,9 @@
 #!name=易车
-#!desc=2025-09-09 10:10:27
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, adx.yiche.com, REJECT
-DOMAIN, log.ycapp.yiche.com, REJECT
+DOMAIN, adx.yiche.com, REJECT, extended-matching, pre-matching
+DOMAIN, log.ycapp.yiche.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.ycapp\.yiche\.com\/appnews\/getadlist - reject-img

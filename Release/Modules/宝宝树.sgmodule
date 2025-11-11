@@ -1,9 +1,9 @@
 #!name=宝宝树
-#!desc=2025-09-15 18:16:54
+#!desc=2025-11-11 14:47:12
 
 [Rule]
-DOMAIN, titan.babytree.com, REJECT
-DOMAIN, titan01.babytree.com, REJECT
+DOMAIN, titan.babytree.com, REJECT, extended-matching, pre-matching
+DOMAIN, titan01.babytree.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.babytree\.com\/api\/(advertising|mobile_activity) - reject

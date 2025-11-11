@@ -1,9 +1,9 @@
 #!name=斗鱼直播
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:12
 
 [Rule]
-DOMAIN, stun1.douyucdn.cn, REJECT
-DOMAIN, stun1.qvb.qcloud.com, REJECT
+DOMAIN, stun1.douyucdn.cn, REJECT, extended-matching, pre-matching
+DOMAIN, stun1.qvb.qcloud.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update - reject-img

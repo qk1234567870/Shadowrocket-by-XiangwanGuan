@@ -1,8 +1,8 @@
 #!name=阅友
-#!desc=2025-09-09 10:10:27
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, ads.reader.yueyouxs.com, REJECT
+DOMAIN, ads.reader.yueyouxs.com, REJECT, extended-matching, pre-matching
 
 [Body Rewrite]
 http-response-jq ^https?:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","aaReportListCfg"]])'

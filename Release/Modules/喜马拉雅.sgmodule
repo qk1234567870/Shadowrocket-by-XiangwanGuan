@@ -1,12 +1,12 @@
 #!name=喜马拉雅
-#!desc=2025-09-09 10:10:27
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, adbehavior.wsa.ximalaya.com, REJECT
-DOMAIN, adbehavior.ximalaya.com, REJECT
-DOMAIN, adse.wsa.ximalaya.com, REJECT
-DOMAIN, adse.ximalaya.com, REJECT
-DOMAIN, adsehera.ximalaya.com, REJECT
+DOMAIN, adbehavior.wsa.ximalaya.com, REJECT, extended-matching, pre-matching
+DOMAIN, adbehavior.ximalaya.com, REJECT, extended-matching, pre-matching
+DOMAIN, adse.wsa.ximalaya.com, REJECT, extended-matching, pre-matching
+DOMAIN, adse.ximalaya.com, REJECT, extended-matching, pre-matching
+DOMAIN, adsehera.ximalaya.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/(live|livewsa)\.ximalaya\.com\/lamia\/v1\/subscribe\/status$ - reject-dict

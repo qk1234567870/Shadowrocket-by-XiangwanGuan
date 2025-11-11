@@ -1,10 +1,10 @@
 #!name=YY
-#!desc=2025-09-09 10:10:27
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, dsp-ad.yy.com, REJECT
-DOMAIN, splash.yy.com, REJECT
-DOMAIN, ysad.yy.com, REJECT
+DOMAIN, dsp-ad.yy.com, REJECT, extended-matching, pre-matching
+DOMAIN, splash.yy.com, REJECT, extended-matching, pre-matching
+DOMAIN, ysad.yy.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/data\.3g\.yy\.com\/popup\/topLiveCardPopup\? - reject-dict

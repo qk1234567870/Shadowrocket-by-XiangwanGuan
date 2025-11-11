@@ -1,15 +1,15 @@
 #!name=金山词霸
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN, ad-stat.ksosoft.com, REJECT
-DOMAIN, counter.kingsoft.com, REJECT
-DOMAIN, counter.ksosoft.com, REJECT
-DOMAIN, img.auction-ads.wpscdn.cn, REJECT
-DOMAIN, minfo.wps.cn, REJECT
-DOMAIN, mobad.ijinshan.com, REJECT
-DOMAIN, ups.ksmobile.net, REJECT
-DOMAIN, ws.ksmobile.net, REJECT
+DOMAIN, ad-stat.ksosoft.com, REJECT, extended-matching, pre-matching
+DOMAIN, counter.kingsoft.com, REJECT, extended-matching, pre-matching
+DOMAIN, counter.ksosoft.com, REJECT, extended-matching, pre-matching
+DOMAIN, img.auction-ads.wpscdn.cn, REJECT, extended-matching, pre-matching
+DOMAIN, minfo.wps.cn, REJECT, extended-matching, pre-matching
+DOMAIN, mobad.ijinshan.com, REJECT, extended-matching, pre-matching
+DOMAIN, ups.ksmobile.net, REJECT, extended-matching, pre-matching
+DOMAIN, ws.ksmobile.net, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/\w+?\.kingsoft-office-service\.com\/ad - reject-200

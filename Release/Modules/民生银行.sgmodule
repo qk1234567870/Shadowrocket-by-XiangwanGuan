@@ -1,11 +1,11 @@
 #!name=民生银行
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:14
 
 [Rule]
-DOMAIN-KEYWORD, c-hzgt2.getui.com, REJECT
-DOMAIN-KEYWORD, cm-10-134.getui.com, REJECT
-DOMAIN-KEYWORD, cm-10-35.getui.com, REJECT
-DOMAIN-KEYWORD, sdk.open.talk.getui.com, REJECT
+DOMAIN-KEYWORD, c-hzgt2.getui.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, cm-10-134.getui.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, cm-10-35.getui.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, sdk.open.talk.getui.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/rs.creditcard.cmbc.com.cn/mmc/img/126f35586ece469aa2daf2e451ba7b4d.jpg - reject-200

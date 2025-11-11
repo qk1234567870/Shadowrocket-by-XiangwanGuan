@@ -1,13 +1,13 @@
 #!name=墨迹天气
-#!desc=2025-09-15 18:16:56
+#!desc=2025-11-11 14:47:14
 
 [Rule]
-DOMAIN, ad.api.moji.com, REJECT
-DOMAIN, adlaunch.moji.com, REJECT
-DOMAIN, ads.mojicdn.com, REJECT
-DOMAIN-SUFFIX, fds.api.moji.com, REJECT
-DOMAIN-SUFFIX, log.moji.com, REJECT
-DOMAIN-SUFFIX, me.api.moji.com, REJECT
+DOMAIN, ad.api.moji.com, REJECT, extended-matching, pre-matching
+DOMAIN, adlaunch.moji.com, REJECT, extended-matching, pre-matching
+DOMAIN, ads.mojicdn.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, fds.api.moji.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, log.moji.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, me.api.moji.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/fcard\.api\.moji\.com\/flycard\/flyCard\? - reject

@@ -1,15 +1,15 @@
 #!name=Yahoo
-#!desc=2025-09-15 18:16:58
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, admarketing.yahoo.net, REJECT
-DOMAIN, ads.auctions.yahoo.com, REJECT
-DOMAIN, ads.finance.yahoo.com, REJECT
-DOMAIN-SUFFIX, adserver.yahoo.com, REJECT
-DOMAIN-SUFFIX, adspecs.yahoo.com, REJECT
-DOMAIN-SUFFIX, advertising.yahoo.com, REJECT
-DOMAIN-SUFFIX, gemini.yahoo.com, REJECT
-DOMAIN-KEYWORD, ads.yahoo, REJECT
+DOMAIN, admarketing.yahoo.net, REJECT, extended-matching, pre-matching
+DOMAIN, ads.auctions.yahoo.com, REJECT, extended-matching, pre-matching
+DOMAIN, ads.finance.yahoo.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, adserver.yahoo.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, adspecs.yahoo.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, advertising.yahoo.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, gemini.yahoo.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, ads.yahoo, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/m\.yap\.yahoo\.com\/v\d{2}\/getAds\.do - reject

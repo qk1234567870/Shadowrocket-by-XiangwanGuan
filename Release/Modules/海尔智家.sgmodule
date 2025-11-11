@@ -1,8 +1,8 @@
 #!name=海尔智家
-#!desc=2025-09-15 18:16:55
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN-SUFFIX, ehaier.com, REJECT
+DOMAIN-SUFFIX, ehaier.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/dualstack-(arestapi|restios)\.amap\.com\/v\d\/iasdkauth\?key= - reject-200

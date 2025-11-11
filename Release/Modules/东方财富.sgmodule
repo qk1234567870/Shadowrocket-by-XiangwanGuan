@@ -1,9 +1,9 @@
 #!name=东方财富
-#!desc=2025-09-15 18:16:54
+#!desc=2025-11-11 14:47:12
 
 [Rule]
-DOMAIN, emdcadvertise.eastmoney.com, REJECT
-DOMAIN, emdcadvertisepj.eastmoney.com, REJECT
+DOMAIN, emdcadvertise.eastmoney.com, REJECT, extended-matching, pre-matching
+DOMAIN, emdcadvertisepj.eastmoney.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/swdlcdn\.eastmoney\.com\/app\/adimg\/ - reject-dict

@@ -1,8 +1,8 @@
 #!name=滴滴出行
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:50:35
 
 [Rule]
-DOMAIN, gwp.xiaojukeji.com, REJECT
+DOMAIN, gwp.xiaojukeji.com, REJECT, extended-matching, pre-matching
 AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,45090,no-resolve)), REJECT
 AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,63646,no-resolve)), REJECT
 

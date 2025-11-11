@@ -1,12 +1,12 @@
 #!name=网易云音乐
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:48:57
 
 [Rule]
-DOMAIN, httpdns.music.163.com, REJECT
-DOMAIN, httpdns.n.netease.com, REJECT
-DOMAIN, iadmat.nosdn.127.net, REJECT
-DOMAIN, iadmatapk.nosdn.127.net, REJECT
-DOMAIN, iadmusicmat.music.126.net, REJECT
+DOMAIN, httpdns.music.163.com, REJECT, extended-matching, pre-matching
+DOMAIN, httpdns.n.netease.com, REJECT, extended-matching, pre-matching
+DOMAIN, iadmat.nosdn.127.net, REJECT, extended-matching, pre-matching
+DOMAIN, iadmatapk.nosdn.127.net, REJECT, extended-matching, pre-matching
+DOMAIN, iadmusicmat.music.126.net, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/(ipv4|interface\d?)\.music\.163.com\/w?e?api\/ad - reject-dict

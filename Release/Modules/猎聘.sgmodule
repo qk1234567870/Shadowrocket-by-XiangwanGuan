@@ -1,8 +1,8 @@
 #!name=猎聘
-#!desc=2025-09-15 18:16:56
+#!desc=2025-11-11 14:47:14
 
 [Rule]
-DOMAIN, apmplus.volces.com, REJECT
+DOMAIN, apmplus.volces.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api-ac\.liepin\.com\/api\/com\.liepin\.cyclops\.live\.get-ad-cards - reject-dict

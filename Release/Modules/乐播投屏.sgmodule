@@ -1,9 +1,9 @@
 #!name=乐播投屏
-#!desc=2025-09-15 18:33:00
+#!desc=2025-11-11 14:47:14
 
 [Rule]
-DOMAIN-SUFFIX, ad.hpplay.cn, REJECT
-DOMAIN-SUFFIX, adeng.hpplay.cn, REJECT
+DOMAIN-SUFFIX, ad.hpplay.cn, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, adeng.hpplay.cn, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/saas\.hpplay\.cn\/api\/lebo-desk\/endpoint\/app-resource\/app-user-banner - reject-dict

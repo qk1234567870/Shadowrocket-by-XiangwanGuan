@@ -1,11 +1,11 @@
 #!name=Keep
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN, hc-ssp.sm.cn, REJECT
-DOMAIN, httpdns.calorietech.com, REJECT
-DOMAIN, httpdns.n.netease.com, REJECT
-DOMAIN, kad.gotokeep.com, REJECT
+DOMAIN, hc-ssp.sm.cn, REJECT, extended-matching, pre-matching
+DOMAIN, httpdns.calorietech.com, REJECT, extended-matching, pre-matching
+DOMAIN, httpdns.n.netease.com, REJECT, extended-matching, pre-matching
+DOMAIN, kad.gotokeep.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp\? - reject-dict

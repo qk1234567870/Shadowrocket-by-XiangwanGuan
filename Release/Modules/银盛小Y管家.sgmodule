@@ -1,8 +1,8 @@
 #!name=银盛小Y管家
-#!desc=2025-09-15 18:16:58
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, ads.ysepay.com, REJECT
+DOMAIN, ads.ysepay.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/ya-sdn\.ysepay\.com\/ma_gate\/advertisement - reject

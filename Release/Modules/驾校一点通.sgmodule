@@ -1,10 +1,10 @@
 #!name=驾校一点通
-#!desc=2025-09-15 18:16:55
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN, richmanapi.jxedt.com, REJECT
-DOMAIN, richmanmain.jxedt.com, REJECT
-DOMAIN, richmanrules.jxedt.com, REJECT
+DOMAIN, richmanapi.jxedt.com, REJECT, extended-matching, pre-matching
+DOMAIN, richmanmain.jxedt.com, REJECT, extended-matching, pre-matching
+DOMAIN, richmanrules.jxedt.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/gouche\.ksedt\.com\/config\/popup\/info$ - reject-dict

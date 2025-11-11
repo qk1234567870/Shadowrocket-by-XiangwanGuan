@@ -1,12 +1,12 @@
 #!name=交管12123
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:50:35
 
 [Rule]
-DOMAIN-SUFFIX, alexametrics.com, REJECT
-DOMAIN-SUFFIX, new.xiongzhangad.com, REJECT
-DOMAIN-SUFFIX, v3.fstats.xyz, REJECT
-DOMAIN-SUFFIX, wss.haoyundmn.com, REJECT
-DOMAIN-KEYWORD, in-page-push, REJECT
+DOMAIN-SUFFIX, alexametrics.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, new.xiongzhangad.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, v3.fstats.xyz, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, wss.haoyundmn.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, in-page-push, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject

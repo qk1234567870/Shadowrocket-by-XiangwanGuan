@@ -1,13 +1,13 @@
 #!name=太平洋科技
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:15
 
 [Rule]
-DOMAIN, ad-analysis.pconline.com.cn, REJECT
-DOMAIN, iad0ssl.pcauto.com.cn, REJECT
-DOMAIN, iad0ssl.pconline.com.cn, REJECT
-DOMAIN, imgad0.pcauto.com.cn, REJECT
-DOMAIN, imgad0.pconline.com.cn, REJECT
-DOMAIN, ivy.pchouse.com.cn, REJECT
+DOMAIN, ad-analysis.pconline.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN, iad0ssl.pcauto.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN, iad0ssl.pconline.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN, imgad0.pcauto.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN, imgad0.pconline.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN, ivy.pchouse.com.cn, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/agent-count\.(pcauto|pconline)\.com\.cn\/counter\/adAnalyse\/ - reject

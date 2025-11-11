@@ -7,10 +7,10 @@
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiangwanConfig/Amap.js
 
 [filter_local]
-AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"AMapiPhone*")), REJECT
-DOMAIN, amap-aos-info-nogw.amap.com, REJECT
-DOMAIN, free-aos-cdn-image.amap.com, REJECT
-DOMAIN-SUFFIX, v.smtcdns.com, REJECT
+AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"AMapiPhone*")), REJECT
+DOMAIN, amap-aos-info-nogw.amap.com, REJECT, extended-matching, pre-matching
+DOMAIN, free-aos-cdn-image.amap.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, v.smtcdns.com, REJECT, extended-matching, pre-matching
 
 [rewrite_local]
 ^https?:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs\? url reject-dict

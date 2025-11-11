@@ -1,12 +1,12 @@
 #!name=CSDN
-#!desc=2025-09-15 18:16:54
+#!desc=2025-11-11 14:47:12
 
 [Rule]
-DOMAIN-SUFFIX, ad.csdn.net, REJECT
-DOMAIN-SUFFIX, counter.csdn.net, REJECT
-DOMAIN-SUFFIX, dc.csdn.net, REJECT
-DOMAIN-SUFFIX, dc2.csdn.net, REJECT
-DOMAIN-SUFFIX, medal.blog.csdn.net, REJECT
+DOMAIN-SUFFIX, ad.csdn.net, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, counter.csdn.net, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, dc.csdn.net, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, dc2.csdn.net, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, medal.blog.csdn.net, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/app-gw\.csdn\.net\/abtesting\/v2\/getList? - reject

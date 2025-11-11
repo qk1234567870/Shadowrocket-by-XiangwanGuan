@@ -1,8 +1,8 @@
 #!name=发现精彩
-#!desc=2025-09-15 18:16:55
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN, union.chinalifeonline.com.cn, REJECT
+DOMAIN, union.chinalifeonline.com.cn, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/static\.95508\.com\/mmg\/ciop\/202402\/button\/.*\.gif$ - reject-img

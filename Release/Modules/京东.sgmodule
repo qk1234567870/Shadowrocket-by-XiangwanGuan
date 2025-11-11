@@ -1,8 +1,8 @@
 #!name=京东
-#!desc=2025-11-01 10:34:31
+#!desc=2025-11-11 15:05:54
 
 [Rule]
-URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT
+URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts|apollo_style|jdaPreDownload) - reject-200

@@ -1,21 +1,21 @@
 #!name=Soul
-#!desc=2025-09-12 15:00:46
+#!desc=2025-11-11 15:25:52
 
 [Rule]
-DOMAIN-SUFFIX, soulapp.cn, DIRECT
+DOMAIN-SUFFIX, soulapp.cn, DIRECT, extended-matching
 IP-CIDR, 8.210.3.170/32, DIRECT, no-resolve
 IP-CIDR, 47.75.72.47/32, DIRECT, no-resolve
-DOMAIN, ad-h5-cdn.soulapp.cn, REJECT
-DOMAIN, ad-h5-station-cdn.soulapp.cn, REJECT
-DOMAIN, ad-r.soulapp.cn, REJECT
-DOMAIN, soul-ad.soulapp.cn, REJECT
-IP-CIDR, 47.56.131.76/32, REJECT, no-resolve
-IP-CIDR, 47.97.215.55/32, REJECT, no-resolve
-IP-CIDR, 47.99.42.29/32, REJECT, no-resolve
-IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
-IP-CIDR, 47.243.147.125/32, REJECT, no-resolve
-IP-CIDR, 120.27.235.201/32, REJECT, no-resolve
-IP-CIDR, 121.196.197.147/32, REJECT, no-resolve
+DOMAIN, ad-h5-cdn.soulapp.cn, REJECT, extended-matching, pre-matching
+DOMAIN, ad-h5-station-cdn.soulapp.cn, REJECT, extended-matching, pre-matching
+DOMAIN, ad-r.soulapp.cn, REJECT, extended-matching, pre-matching
+DOMAIN, soul-ad.soulapp.cn, REJECT, extended-matching, pre-matching
+IP-CIDR, 47.56.131.76/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 47.97.215.55/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 47.99.42.29/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 47.110.187.87/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 47.243.147.125/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 120.27.235.201/32,REJECT, no-resolve, pre-matching
+IP-CIDR, 121.196.197.147/32,REJECT, no-resolve, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/chat-live\.soulapp\.cn\/live\/planet\/recListV2 - reject-200

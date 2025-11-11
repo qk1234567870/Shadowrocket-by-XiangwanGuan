@@ -1,8 +1,8 @@
 #!name=中国移动云盘
-#!desc=2025-09-15 18:16:58
+#!desc=2025-11-11 14:48:58
 
 [Rule]
-DOMAIN, ad.mcloud.139.com, REJECT
+DOMAIN, ad.mcloud.139.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:\d+\/mcmm\/api\/(IAdvert|v\d\/getAdverts) - reject-200

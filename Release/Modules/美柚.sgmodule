@@ -1,9 +1,9 @@
 #!name=美柚
-#!desc=2025-09-09 10:10:26
+#!desc=2025-11-11 14:47:14
 
 [Rule]
-DOMAIN, ad.seeyouyima.com, REJECT
-DOMAIN, axxd.xmseeyouyima.com, REJECT
+DOMAIN, ad.seeyouyima.com, REJECT, extended-matching, pre-matching
+DOMAIN, axxd.xmseeyouyima.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/circle\.(xm)?seeyouyima\.com\/v\d\/article_recommend\? - reject

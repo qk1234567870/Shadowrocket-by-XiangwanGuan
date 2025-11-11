@@ -1,10 +1,10 @@
 #!name=百度地图
-#!desc=2025-09-15 18:16:54
+#!desc=2025-11-11 14:47:12
 
 [Rule]
-DOMAIN, afdconf.baidu.com, REJECT
-DOMAIN, httpdns.baidubce.com, REJECT
-DOMAIN, lc.map.baidu.com, REJECT
+DOMAIN, afdconf.baidu.com, REJECT, extended-matching, pre-matching
+DOMAIN, httpdns.baidubce.com, REJECT, extended-matching, pre-matching
+DOMAIN, lc.map.baidu.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/afd\.baidu\.com\/afd\/entry\?action=(update|query) - reject-dict

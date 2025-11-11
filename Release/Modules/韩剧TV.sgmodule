@@ -1,9 +1,9 @@
 #!name=韩剧TV
-#!desc=2025-09-15 18:16:55
+#!desc=2025-11-11 14:47:13
 
 [Rule]
-DOMAIN, adx-os.bridgeturbo.com, REJECT
-DOMAIN, da.bridgeturbo.com, REJECT
+DOMAIN, adx-os.bridgeturbo.com, REJECT, extended-matching, pre-matching
+DOMAIN, da.bridgeturbo.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.hanju\.koudaibaobao\.com\/api\/carp\/kp\? - reject

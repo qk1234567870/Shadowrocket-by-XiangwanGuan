@@ -1,8 +1,8 @@
 #!name=同程旅行
-#!desc=2025-09-15 18:16:57
+#!desc=2025-11-11 14:47:15
 
 [Rule]
-DOMAIN, vstlog.17usoft.com, REJECT
+DOMAIN, vstlog.17usoft.com, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/mobileapi\.ly\.com\/wlfrontend\/app\/scenicMain - reject-dict
