@@ -1,5 +1,5 @@
 #!name=知乎
-#!desc=2025-11-11 20:01:39
+#!desc=2025-11-11 21:15:22
 
 [Rule]
 DOMAIN, appcloud.zhihu.com, REJECT, extended-matching, pre-matching
@@ -10,6 +10,7 @@ DOMAIN, sugar.zhihu.com, REJECT, extended-matching, pre-matching
 DOMAIN, zxid-m.mobileservice.cn, REJECT, extended-matching, pre-matching
 IP-CIDR, 103.41.167.237/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 118.89.204.198/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 182.61.194.7/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve, pre-matching
 
 [URL Rewrite]
