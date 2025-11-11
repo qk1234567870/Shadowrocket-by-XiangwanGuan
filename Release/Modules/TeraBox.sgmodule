@@ -1,0 +1,9 @@
+#!name=TeraBox
+#!desc=2025-11-11 19:26:46
+
+[URL Rewrite]
+^https?:\/\/www\.terabox\.com\/adx\/ - reject-dict
+^https?:\/\/www\.terabox\.com\/api\/ad\/ - reject-dict
+
+[MITM]
+hostname = %APPEND% www.terabox.com
