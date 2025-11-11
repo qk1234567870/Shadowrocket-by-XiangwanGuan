@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 19:30:40
+#!desc=2025-11-11 19:38:10
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -541,7 +541,8 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-dict
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject-dict
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit - reject-dict
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome - reject-200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.popup\.get\/ - reject-dict
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome\/ - reject-dict
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash - reject-dict
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/ - reject-dict
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise - reject-dict
@@ -590,7 +591,6 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/aiqicha\.baidu\.com\/m\/getLoginWordsAjax - reject-dict
 ^https?:\/\/als\.baidu\.com\/clog\/clog - reject
 ^https?:\/\/alt-r\.my\.com\/mobile - reject-dict
-^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch\?appkey=23782110 - reject
 ^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ - reject-dict
 ^https?:\/\/ap\.dongdianqiu\.com\/plat\/v4 - reject
 ^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx$ - reject-dict
@@ -2064,6 +2064,10 @@ http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.h
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.widget\.refresh\.get\/ '.data.homeTopList |= map(select(.sectionType == "kingkongDo"))'
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ '.data.cardList |= map(if has("cardData") and (.cardData | has("hotwords")) then .cardData |= del(.hotwords) else . end)'
 http-response-jq ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ '.data.resultList |= map(select(.type != "MarketHotSpot"))'
+http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.mec\.aristotle\.get\/ 'delpaths([["data","data","top","keywords"]])'
+http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.mypage\.feed\/ 'delpaths([["data","feedCard"]])'
+http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.user\.my\.content\.get\/ 'delpaths([["data","banner"]])'
+http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.user\.my\.content\.get\/ 'delpaths([["data","performFilmVip","userProfitList"]])'
 http-response-jq ^https?:\/\/api(5-lq)?\.pipix\.com\/bds\/feed\/stream\/v2\/ '.data.data |= map(select(has("ad_info") | not))'
 http-response-jq ^https?:\/\/api(5-lq)?\.pipix\.com\/bds\/user\/check_in\/ '.data.profile_entrances |= map(select(.title != "放心借" and .title != "洋钱罐借款")) | del(.data.pet_interface_message)'
 http-response-jq ^https?:\/\/api-release\.wuta-cam\.com\/ad_tree$ '.regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN("home","me"))))'
