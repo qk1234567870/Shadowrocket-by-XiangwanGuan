@@ -1,12 +1,12 @@
 #!name=小红书
-#!desc=2025-11-11 19:16:52
+#!desc=2025-11-11 22:19:59
 
 [Rule]
 DOMAIN, ads-img-qc.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-video-al.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-video-qc.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, t-ads.xiaohongshu.com, REJECT, extended-matching, pre-matching
-AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)), REJECT-NO-DROP, extended-matching
+AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com),extended-matching), REJECT-NO-DROP
 
 [URL Rewrite]
 ^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject-img
