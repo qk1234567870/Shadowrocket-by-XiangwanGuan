@@ -1,7 +1,8 @@
 #!name=得间小说
-#!desc=2025-11-11 19:44:47
+#!desc=2025-11-11 20:11:34
 
 [Rule]
+DOMAIN, saad.ms.zhangyue.net, REJECT, extended-matching, pre-matching
 DOMAIN, smad.ms.zhangyue.net, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]

@@ -1,11 +1,20 @@
 #!name=掌阅
-#!desc=2025-09-09 10:10:27
+#!desc=2025-11-11 20:11:35
+
+[Rule]
+DOMAIN, saad.ms.zhangyue.net, REJECT, extended-matching, pre-matching
 
 [URL Rewrite]
-^https?:\/\/book\.img\.ireader\.com\/group6\/M00 - reject-img
-^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad\/ - reject-200
-^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad - reject-200
-^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/ - reject-200
+^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/bookstore\/ad\/ - reject-dict
+^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyam\/app\/app\.php\? - reject-dict
+^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyapi\/bookstore\/ad\/ - reject-dict
+^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyapi\/bookstore\/user\/mytab\? - reject-dict
+^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zybk\/api\/pop\/index\? - reject-dict
+^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyboot\/activity\/mytab\? - reject-dict
+
+[Body Rewrite]
+http-response-jq ^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/bookstore\/read\/visual\/channel\/list\? '.body.list |= map(select(.id | contains("ad_") | not))'
+http-response-jq ^https?:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zybook4\/iphone\/u\/p\/api\.php\? 'delpaths([["Splash"]])'
 
 [MITM]
-hostname = %APPEND% book.img.ireader.com,ih2.ireader.com
+hostname = %APPEND% ih2.ireader.com,webboot.zhangyue.com
