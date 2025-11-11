@@ -1,5 +1,5 @@
-#!name=DLabel云标签
-#!desc=2025-09-09 10:10:26
+#!name=Dlabel云标签
+#!desc=2025-11-11 19:16:51
 
 [URL Rewrite]
 ^https?:\/\/dudian-oss\.oss-cn-shenzhen\.aliyuncs\.com\/dlabel\/1\/startpage - reject

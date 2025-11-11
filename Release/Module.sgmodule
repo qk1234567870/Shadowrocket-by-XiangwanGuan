@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 18:51:08
+#!desc=2025-11-11 19:16:51
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -70,6 +70,7 @@ DOMAIN, analytics.umetrip.com, REJECT, extended-matching, pre-matching
 DOMAIN, api.biliapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, api.biliapi.net, REJECT, extended-matching, pre-matching
 DOMAIN, api.iqiyi.com, REJECT, extended-matching, pre-matching
+DOMAIN, apm.gotokeep.com, REJECT, extended-matching, pre-matching
 DOMAIN, apmplus.volces.com, REJECT, extended-matching, pre-matching
 DOMAIN, app-ad.variflight.com, REJECT, extended-matching, pre-matching
 DOMAIN, app.biliapi.com, REJECT, extended-matching, pre-matching
@@ -680,6 +681,7 @@ URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-match
 ^https?:\/\/api\.gotokeep\.com\/search\/v4\/hotword\/list\? - reject-dict
 ^https?:\/\/api\.gotokeep\.com\/search\/v5\/hotCourse\/list$ - reject-dict
 ^https?:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\? - reject-dict
+^https?:\/\/api\.gotokeep\.com\/twins\/union\/feed\/function\? - reject-dict
 ^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\? - reject-dict
 ^https?:\/\/api\.hanju\.koudaibaobao\.com\/api\/carp\/kp\? - reject
 ^https?:\/\/api\.hellobike\.com\/api\?adx - reject-dict
@@ -2081,7 +2083,7 @@ http-response-jq ^https?:\/\/api\.coolapk\.com\/v6\/main\/dataList '.data |= (if
 http-response-jq ^https?:\/\/api\.coolapk\.com\/v6\/main\/indexV8 '.data|=(if length>0 then map(select((.entityTemplate!="sponsorCard") and ([8639,29349,33006,32557]|index(.entityId)|not) and ((.title//""|test("值得买|红包"))|not))) else. end)'
 http-response-jq ^https?:\/\/api\.coolapk\.com\/v6\/main\/init '.data |= map(select(.entityId? | [944,945,6390] | index(.) | not) | if .entityId == 20131 then .entities |= map(select(.title != "酷品")) else . end)'
 http-response-jq ^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList 'if (.data | length > 0) then .data |= map(select((.title? != "酷安热搜") and (.entityTemplate? != "imageScaleCard") and (.entityTemplate? != "sponsorCard"))) else . end'
-http-response-jq ^https?:\/\/api\.gotokeep\.com\/config\/v3\/basic\? '.data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend" or . == "suitTab" or . == "union_feed_route"))'
+http-response-jq ^https?:\/\/api\.gotokeep\.com\/config\/v3\/basic\? '.data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or . == "schedule" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend" or . == "suitTab" or . == "union_feed_route"))'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","activityBrandFeedSpotAdRequestMoment"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","activityBrandFeedSpotPositionDynamic"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","activityFeedSpotAdRequestMoment"]])'
@@ -2124,6 +2126,7 @@ http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","searchFeedSpotPositionDynamic"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","splashAdLoadTimeLimit"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","spotShowReport"]])'
+http-response-jq ^https?:\/\/api\.gotokeep\.com\/pencil-webapp\/play\/v1\/games\? '.data.games[].microGames[] |= if .leftIcon? and .leftIcon.type == "aiMode" then del(.leftIcon) else . end'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/twins\/union\/feed\/union_feed_all$ '.data.modules |= map(select(.code == "unionFeedEntry"))'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail\? 'if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end'
 http-response-jq ^https?:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/banner\/common\/getAllBannerPage\? 'del(.data[] | select(.bannerChannelName == "活动"))'

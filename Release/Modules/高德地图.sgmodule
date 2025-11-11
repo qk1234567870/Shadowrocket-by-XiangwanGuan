@@ -1,11 +1,11 @@
 #!name=高德地图
-#!desc=2025-11-11 15:20:27
+#!desc=2025-11-11 19:16:52
 
 [Rule]
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN, free-aos-cdn-image.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, v.smtcdns.com, REJECT, extended-matching, pre-matching
-AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"AMapiPhone*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"AMapiPhone*")), REJECT, extended-matching
 
 [URL Rewrite]
 ^https?:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs\? - reject-dict

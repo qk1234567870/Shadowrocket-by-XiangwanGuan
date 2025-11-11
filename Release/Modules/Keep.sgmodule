@@ -1,7 +1,8 @@
 #!name=Keep
-#!desc=2025-11-11 14:47:13
+#!desc=2025-11-11 19:16:51
 
 [Rule]
+DOMAIN, apm.gotokeep.com, REJECT, extended-matching, pre-matching
 DOMAIN, hc-ssp.sm.cn, REJECT, extended-matching, pre-matching
 DOMAIN, httpdns.calorietech.com, REJECT, extended-matching, pre-matching
 DOMAIN, httpdns.n.netease.com, REJECT, extended-matching, pre-matching
@@ -14,10 +15,11 @@ DOMAIN, kad.gotokeep.com, REJECT, extended-matching, pre-matching
 ^https?:\/\/api\.gotokeep\.com\/search\/v4\/hotword\/list\? - reject-dict
 ^https?:\/\/api\.gotokeep\.com\/search\/v5\/hotCourse\/list$ - reject-dict
 ^https?:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\? - reject-dict
+^https?:\/\/api\.gotokeep\.com\/twins\/union\/feed\/function\? - reject-dict
 ^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\? - reject-dict
 
 [Body Rewrite]
-http-response-jq ^https?:\/\/api\.gotokeep\.com\/config\/v3\/basic\? '.data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend" or . == "suitTab" or . == "union_feed_route"))'
+http-response-jq ^https?:\/\/api\.gotokeep\.com\/config\/v3\/basic\? '.data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or . == "schedule" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend" or . == "suitTab" or . == "union_feed_route"))'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","activityBrandFeedSpotAdRequestMoment"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","activityBrandFeedSpotPositionDynamic"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","activityFeedSpotAdRequestMoment"]])'
@@ -60,6 +62,7 @@ http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","searchFeedSpotPositionDynamic"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","splashAdLoadTimeLimit"]])'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/configs$ 'delpaths([["data","spotShowReport"]])'
+http-response-jq ^https?:\/\/api\.gotokeep\.com\/pencil-webapp\/play\/v1\/games\? '.data.games[].microGames[] |= if .leftIcon? and .leftIcon.type == "aiMode" then del(.leftIcon) else . end'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/twins\/union\/feed\/union_feed_all$ '.data.modules |= map(select(.code == "unionFeedEntry"))'
 http-response-jq ^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail\? 'if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end'
 
