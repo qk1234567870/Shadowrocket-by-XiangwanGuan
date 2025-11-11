@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-11 19:16:51
+#!desc=2025-11-11 19:23:40
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -2031,8 +2031,8 @@ http-response-jq ^https?:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/nexus-we
 http-response-jq ^https?:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ 'delpaths([["ad_banner"]])'
 http-response-jq ^https?:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ 'delpaths([["advertise_on_off"]])'
 http-response-jq ^https?:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ 'if (getpath([]) | has("ios_mall_switch")) then (setpath(["ios_mall_switch"]; false)) else . end'
-http-response-jq ^https?:\/\/(v-api\.crazymaplestudios\.com|d1k8g7qaebqd28\.cloudfront\.net)\/api\/video\/book\/getBookDetailV2$ 'del(.data.ad_vip)'
-http-response-jq ^https?:\/\/(v-api\.crazymaplestudios\.com|d1k8g7qaebqd28\.cloudfront\.net)\/api\/video\/hall\/infoV3$ 'del(.data.search_keyword_list)'
+http-response-jq ^https?:\/\/(v-api\.crazymaplestudios\.com|d1k8g7qaebqd28\.cloudfront\.net)\/api\/video\/book\/getBookDetailV2$ 'delpaths([["data","ad_vip"]])'
+http-response-jq ^https?:\/\/(v-api\.crazymaplestudios\.com|d1k8g7qaebqd28\.cloudfront\.net)\/api\/video\/hall\/infoV3$ 'delpaths([["data","search_keyword_list"]])'
 http-response-jq ^https?:\/\/(www|api)\.duitang\.com\/napi\/settings\/ 'delpaths([["data","AD_HOME_ENTER_POP_COUNT"]])'
 http-response-jq ^https?:\/\/(www|api)\.duitang\.com\/napi\/settings\/ 'delpaths([["data","AD_MENU_SELECTIONS"]])'
 http-response-jq ^https?:\/\/(www|api)\.duitang\.com\/napi\/settings\/ 'delpaths([["data","AD_PRICE_SHOW"]])'
