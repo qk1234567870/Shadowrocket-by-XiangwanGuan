@@ -1,8 +1,8 @@
 #!name=菜鸟裹裹
-#!desc=2025-11-11 15:20:27
+#!desc=2025-11-11 18:50:23
 
 [Rule]
-AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"Cainiao4iPhone*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"Cainiao4iPhone*")), REJECT, extended-matching
 
 [URL Rewrite]
 ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get - reject-dict

@@ -1,5 +1,5 @@
 #!name=CSDN
-#!desc=2025-11-11 14:47:12
+#!desc=2025-11-11 18:44:35
 
 [Rule]
 DOMAIN-SUFFIX, ad.csdn.net, REJECT, extended-matching, pre-matching
