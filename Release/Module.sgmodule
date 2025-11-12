@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-12 13:33:50
+#!desc=2025-11-12 13:53:21
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -196,7 +196,7 @@ DOMAIN, th-a.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, th-b.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, th.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, titan.babytree.com, REJECT, extended-matching, pre-matching
-DOMAIN, titan.pinduoduo.com, REJECT-NO-DROP, extended-matching, pre-matching
+DOMAIN, titan.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, titan01.babytree.com, REJECT, extended-matching, pre-matching
 DOMAIN, track.58.com, REJECT, extended-matching, pre-matching
 DOMAIN, trackercollect.ddxq.mobi, REJECT, extended-matching, pre-matching
@@ -356,7 +356,7 @@ IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
 IP-CIDR, 182.61.194.7/32, REJECT, no-resolve
 IP-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve
 AND, ((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))), REJECT
-AND, ((PROTOCOL,QUIC),(DOMAIN,api.pinduoduo.com)), REJECT
+AND, ((PROTOCOL,QUIC),(DOMAIN,api.pinduoduo.com)), REJECT-NO-DROP
 AND, ((PROTOCOL,QUIC),(DOMAIN,youtubei.googleapis.com)), REJECT-NO-DROP
 AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com)), REJECT-NO-DROP
 AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,spotify.com)), REJECT-NO-DROP
