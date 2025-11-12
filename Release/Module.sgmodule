@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-12 09:06:33
+#!desc=2025-11-12 09:35:28
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -356,11 +356,11 @@ IP-CIDR, 180.76.76.200/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 182.61.194.7/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve, pre-matching
 AND, ((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))), REJECT, pre-matching
-AND, ((PROTOCOL,QUIC),(DOMAIN,api.pinduoduo.com,extended-matching)), REJECT
-AND, ((PROTOCOL,QUIC),(DOMAIN,youtubei.googleapis.com,extended-matching)), REJECT-NO-DROP
-AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com,extended-matching)), REJECT-NO-DROP
-AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,spotify.com,extended-matching)), REJECT-NO-DROP
-AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)), REJECT-NO-DROP
+AND, ((PROTOCOL,QUIC),(DOMAIN,api.pinduoduo.com)), REJECT
+AND, ((PROTOCOL,QUIC),(DOMAIN,youtubei.googleapis.com)), REJECT-NO-DROP
+AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com)), REJECT-NO-DROP
+AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,spotify.com)), REJECT-NO-DROP
+AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)), REJECT-NO-DROP
 AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,45090,no-resolve)), REJECT, pre-matching
 AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,63646,no-resolve)), REJECT, pre-matching
 AND, ((URL-REGEX,"^https?:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d(\d)?",extended-matching),(USER-AGENT,"*com.xunmeng.pinduoduo*")), REJECT
