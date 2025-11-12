@@ -4,7 +4,6 @@
     repo: "Shadowrocket",
     path: "Release/Modules",
     apps: new Map(),
-    extraModule: "Module.sgmodule",
     pendingInstall: null,
   };
   const CACHE_KEY = "module_cache";
@@ -61,10 +60,7 @@
   };
 
   const parseFile = (name, txt) => {
-    const appName =
-      name === "Module.sgmodule"
-        ? "融合模块"
-        : name.replace(/\.sgmodule$/i, "");
+    const appName = name.replace(/\.sgmodule$/i, "");
     state.apps.set(appName, {
       domains: extractDomains(txt),
       raw: txt,
@@ -224,11 +220,6 @@
       `https://api.github.com/repos/${state.owner}/${state.repo}/contents/${state.path}`
     );
     const files = list.filter((x) => x.type === "file");
-
-    files.push({
-      name: state.extraModule,
-      download_url: `https://raw.githubusercontent.com/${state.owner}/${state.repo}/main/Release/${state.extraModule}`,
-    });
 
     let done = 0;
     const total = files.length;
