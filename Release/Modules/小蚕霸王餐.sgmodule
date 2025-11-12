@@ -1,8 +1,8 @@
 #!name=小蚕霸王餐
-#!desc=2025-11-11 22:23:55
+#!desc=2025-11-12 13:30:13
 
 [Rule]
-AND, ((URL-REGEX,"^https?:\/\/gw\.xiaocantech\.com\/rpc"),extended-matching,(USER-AGENT,"GetBannerList*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/gw\.xiaocantech\.com\/rpc"),(USER-AGENT,"GetBannerList*")), REJECT
 
 [URL Rewrite]
 ^https?:\/\/gw\.xiaocantech\.com\/g\/pa - reject-dict

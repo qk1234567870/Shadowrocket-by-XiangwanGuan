@@ -1,11 +1,11 @@
 #!name=YouTube
-#!desc=2025-11-11 22:19:59
+#!desc=2025-11-12 13:30:14
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
 [Rule]
-AND, ((PROTOCOL,QUIC),(DOMAIN,youtubei.googleapis.com),extended-matching), REJECT-NO-DROP
-AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com),extended-matching), REJECT-NO-DROP
+AND, ((PROTOCOL,QUIC),(DOMAIN,youtubei.googleapis.com)), REJECT-NO-DROP
+AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com)), REJECT-NO-DROP
 
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200

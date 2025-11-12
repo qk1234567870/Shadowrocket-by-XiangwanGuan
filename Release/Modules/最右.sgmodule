@@ -1,9 +1,9 @@
 #!name=最右
-#!desc=2025-11-11 15:07:38
+#!desc=2025-11-12 13:33:15
 
 [Rule]
-URL-REGEX, "^https?:\/\/file-share\.izuiyou\.com\/octopus\/media\/templates\/search_home_page_(nv|nv_v2)\/search_home_page_nv", REJECT, extended-matching
-URL-REGEX, "^https?:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/", REJECT-TINYGIF, extended-matching
+URL-REGEX, "^https?:\/\/file-share\.izuiyou\.com\/octopus\/media\/templates\/search_home_page_(nv|nv_v2)\/search_home_page_nv", REJECT
+URL-REGEX, "^https?:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/", REJECT-TINYGIF
 
 [URL Rewrite]
 ^https?:\/\/203\.107\.1\.1/\d+/ss - reject

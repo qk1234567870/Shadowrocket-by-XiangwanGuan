@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-11-12 09:35:28
+#!desc=2025-11-12 13:33:50
 #!arguments=YouTube ·屏蔽上传按钮:true, YouTube ·屏蔽选段按钮:true, YouTube ·屏蔽短片按钮:true, YouTube ·字幕翻译语言:zh-Hans, YouTube ·歌词翻译语言:zh-Hans
 #!arguments-desc=\n 参数说明：\n YouTube翻译语言：默认简中，填入off关闭；\n 
 
@@ -328,61 +328,61 @@ DOMAIN-KEYWORD, medicine.lanjiyin.com.cn, REJECT, extended-matching, pre-matchin
 DOMAIN-KEYWORD, ossp.voicecloud.cn, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, report.meituan, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, sdk.open.talk.getui.com, REJECT, extended-matching, pre-matching
-IP-CIDR, 1.202.85.193/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 47.56.131.76/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 47.97.215.55/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 47.99.42.29/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 47.110.187.87/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 47.243.147.125/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 59.111.239.61/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 59.111.239.62/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 101.32.16.204/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 103.37.155.60/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 103.41.167.237/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 103.44.59.54/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 111.63.147.158/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 111.206.98.63/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 115.236.121.51/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 115.236.121.195/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 116.211.198.237/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 118.89.204.198/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 119.29.126.137/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 120.27.235.201/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 120.240.95.37/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 121.196.197.147/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 122.229.8.47/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 122.229.29.89/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 180.76.76.200/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 182.61.194.7/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve, pre-matching
-AND, ((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))), REJECT, pre-matching
+IP-CIDR, 1.202.85.193/32, REJECT, no-resolve
+IP-CIDR, 47.56.131.76/32, REJECT, no-resolve
+IP-CIDR, 47.97.215.55/32, REJECT, no-resolve
+IP-CIDR, 47.99.42.29/32, REJECT, no-resolve
+IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
+IP-CIDR, 47.243.147.125/32, REJECT, no-resolve
+IP-CIDR, 59.111.239.61/32, REJECT, no-resolve
+IP-CIDR, 59.111.239.62/32, REJECT, no-resolve
+IP-CIDR, 101.32.16.204/32, REJECT, no-resolve
+IP-CIDR, 103.37.155.60/32, REJECT, no-resolve
+IP-CIDR, 103.41.167.237/32, REJECT, no-resolve
+IP-CIDR, 103.44.59.54/32, REJECT, no-resolve
+IP-CIDR, 111.63.147.158/32, REJECT, no-resolve
+IP-CIDR, 111.206.98.63/32, REJECT, no-resolve
+IP-CIDR, 115.236.121.51/32, REJECT, no-resolve
+IP-CIDR, 115.236.121.195/32, REJECT, no-resolve
+IP-CIDR, 116.211.198.237/32, REJECT, no-resolve
+IP-CIDR, 118.89.204.198/32, REJECT, no-resolve
+IP-CIDR, 119.29.126.137/32, REJECT, no-resolve
+IP-CIDR, 120.27.235.201/32, REJECT, no-resolve
+IP-CIDR, 120.240.95.37/32, REJECT, no-resolve
+IP-CIDR, 121.196.197.147/32, REJECT, no-resolve
+IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
+IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
+IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
+IP-CIDR, 182.61.194.7/32, REJECT, no-resolve
+IP-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve
+AND, ((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))), REJECT
 AND, ((PROTOCOL,QUIC),(DOMAIN,api.pinduoduo.com)), REJECT
 AND, ((PROTOCOL,QUIC),(DOMAIN,youtubei.googleapis.com)), REJECT-NO-DROP
 AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com)), REJECT-NO-DROP
 AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,spotify.com)), REJECT-NO-DROP
 AND, ((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)), REJECT-NO-DROP
-AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,45090,no-resolve)), REJECT, pre-matching
-AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,63646,no-resolve)), REJECT, pre-matching
-AND, ((URL-REGEX,"^https?:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d(\d)?",extended-matching),(USER-AGENT,"*com.xunmeng.pinduoduo*")), REJECT
-AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"%E6%B7%98%E5%AE%9D*")), REJECT
-AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")), REJECT
-AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"AMapiPhone*")), REJECT
-AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"Cainiao4iPhone*")), REJECT
-AND, ((URL-REGEX,"^https?:\/\/gw\.xiaocantech\.com\/rpc",extended-matching),(USER-AGENT,"GetBannerList*")), REJECT
-AND, ((URL-REGEX,"^https?:\/\/[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))\]\/d(\d)?\?",extended-matching),(USER-AGENT,"*com.xunmeng.pinduoduo*")), REJECT
-URL-REGEX, "^https?:\/\/file-share\.izuiyou\.com\/octopus\/media\/templates\/search_home_page_(nv|nv_v2)\/search_home_page_nv", REJECT, extended-matching
-URL-REGEX, "^https?:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html", REJECT, extended-matching
-URL-REGEX, "^https?:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/AdService\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/EcomResourceServer\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/vip\d\.kuwo\.cn\/vip\/v\d\/sysinfo\?op=getRePayAndDoPayBox", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/newMenuList\/menuListInfo", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/pasterAdvert\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/startup\/config", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/user\/freeMode\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT, extended-matching
+AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,45090,no-resolve)), REJECT
+AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,63646,no-resolve)), REJECT
+AND, ((URL-REGEX,"^https?:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d(\d)?"),(USER-AGENT,"*com.xunmeng.pinduoduo*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E6%B7%98%E5%AE%9D*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"AMapiPhone*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"Cainiao4iPhone*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/gw\.xiaocantech\.com\/rpc"),(USER-AGENT,"GetBannerList*")), REJECT
+AND, ((URL-REGEX,"^https?:\/\/[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))\]\/d(\d)?\?"),(USER-AGENT,"*com.xunmeng.pinduoduo*")), REJECT
+URL-REGEX, "^https?:\/\/file-share\.izuiyou\.com\/octopus\/media\/templates\/search_home_page_(nv|nv_v2)\/search_home_page_nv", REJECT
+URL-REGEX, "^https?:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html", REJECT
+URL-REGEX, "^https?:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/AdService\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/EcomResourceServer\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/vip\d\.kuwo\.cn\/vip\/v\d\/sysinfo\?op=getRePayAndDoPayBox", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/newMenuList\/menuListInfo", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/pasterAdvert\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/startup\/config", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/user\/freeMode\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/w{32}\.jddebug\.com\/diagnose\?", REJECT
 
 [URL Rewrite]
 ^(^https?:\/\/www\.vgtime\.com\/app\/topic\/\d+\.jhtml\?.*?&close_ad=)false(&page=\d&sign=\w+&timestamp=\d+&font_size=\d$) $1true$2 302

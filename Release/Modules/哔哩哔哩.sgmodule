@@ -1,12 +1,12 @@
 #!name=哔哩哔哩
-#!desc=2025-11-11 14:57:56
+#!desc=2025-11-12 13:30:14
 
 [Rule]
 DOMAIN, api.biliapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, api.biliapi.net, REJECT, extended-matching, pre-matching
 DOMAIN, app.biliapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, app.biliapi.net, REJECT, extended-matching, pre-matching
-AND, ((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))), REJECT, pre-matching
+AND, ((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))), REJECT
 
 [URL Rewrite]
 ^https?:\/\/api\.bilibili\.com\/pgc\/page\/channel\?(.*)&mobi_app=iphone&(.*)$ https://api.bilibili.com/pgc/page/channel?$1&mobi_app=iphone_i&$2 header

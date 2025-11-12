@@ -1,17 +1,17 @@
 #!name=酷我音乐
-#!desc=2025-11-11 20:01:38
+#!desc=2025-11-12 13:33:15
 
 [Rule]
-IP-CIDR, 111.206.98.63/32, REJECT, no-resolve, pre-matching
-URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/AdService\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/EcomResourceServer\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/vip\d\.kuwo\.cn\/vip\/v\d\/sysinfo\?op=getRePayAndDoPayBox", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/newMenuList\/menuListInfo", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/pasterAdvert\/", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/startup\/config", REJECT-TINYGIF, extended-matching
-URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/user\/freeMode\/", REJECT-TINYGIF, extended-matching
+IP-CIDR, 111.206.98.63/32, REJECT, no-resolve
+URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/AdService\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/rich\.kuwo\.cn\/EcomResourceServer\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/vip\d\.kuwo\.cn\/vip\/v\d\/sysinfo\?op=getRePayAndDoPayBox", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/newMenuList\/menuListInfo", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/pasterAdvert\/", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/app\/startup\/config", REJECT-TINYGIF
+URL-REGEX, "^https?:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/user\/freeMode\/", REJECT-TINYGIF
 
 [URL Rewrite]
 ^https?:\/\/appi\.kuwo\.cn\/kuwopay\/personal\/cells - reject-dict
