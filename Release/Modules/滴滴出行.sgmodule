@@ -1,10 +1,10 @@
 #!name=滴滴出行
-#!desc=2025-11-11 20:33:18
+#!desc=2025-11-12 09:06:33
 
 [Rule]
 DOMAIN, gwp.xiaojukeji.com, REJECT, extended-matching, pre-matching
-AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,45090,no-resolve)), REJECT
-AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,63646,no-resolve)), REJECT
+AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,45090,no-resolve)), REJECT, pre-matching
+AND, ((PROTOCOL,TCP),(DST-PORT,25641),(IP-ASN,63646,no-resolve)), REJECT, pre-matching
 
 [URL Rewrite]
 ^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf - reject-dict
