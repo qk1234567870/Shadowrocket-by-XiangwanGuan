@@ -1,5 +1,5 @@
 #!name=拼多多
-#!desc=2025-11-12 13:53:21
+#!desc=2025-11-14 13:36:30
 
 [Rule]
 DOMAIN, apm-a.pinduoduo.com, REJECT, extended-matching, pre-matching
@@ -8,7 +8,6 @@ DOMAIN, cd-1.pddpic.com, REJECT, extended-matching, pre-matching
 DOMAIN, cdl-1.pddpic.com, REJECT, extended-matching, pre-matching
 DOMAIN, cdl-p2.pddpic.com, REJECT, extended-matching, pre-matching
 DOMAIN, file.pinduoduo.com, REJECT, extended-matching, pre-matching
-DOMAIN, m.pinduoduo.net, REJECT, extended-matching, pre-matching
 DOMAIN, meta.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, ta-a.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, ta.pinduoduo.com, REJECT, extended-matching, pre-matching

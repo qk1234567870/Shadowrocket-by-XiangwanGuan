@@ -1,10 +1,13 @@
 #!name=掌上英雄联盟
-#!desc=2025-09-09 10:10:27
+#!desc=2025-11-14 13:36:32
 
 [URL Rewrite]
-^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend\/(?!v2\/platactivity.*) - reject
-^https?:\/\/ossweb-img\.qq\.com\/upload\/adw\/image\/[0-9]{3}\/202[0-9]{5}\/[a-z0-9]{32}\.(jpg|jpeg) - reject-200
-^https?:\/\/us\.l\.qq\.com\/exapp - reject-200
+^https?:\/\/mlol\.qt\.qq\.com\/go\/club\/match\/get_ai_search_words$ - reject-dict
+^https?:\/\/mlol\.qt\.qq\.com\/go\/customize_search\/article_rank\? - reject-dict
+^https?:\/\/mlol\.qt\.qq\.com\/go\/customize_search\/article_rank_tab\? - reject-dict
+^https?:\/\/mlol\.qt\.qq\.com\/go\/mlol_news\/search\/varcache_hotV\d\? - reject-dict
+^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend\/platstrongshell\? - reject-dict
+^https?:\/\/mlol\.qt\.qq\.com\/go\/zone\/bottomtab_tip\? - reject-dict
 
 [MITM]
-hostname = %APPEND% mlol.qt.qq.com,ossweb-img.qq.com,us.l.qq.com
+hostname = %APPEND% mlol.qt.qq.com
